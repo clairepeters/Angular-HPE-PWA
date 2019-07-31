@@ -1,22 +1,23 @@
+
+
 a{
     color: black;
     text-decoration: none;
     cursor: pointer;
 }
-table.mat-table {
-    border-spacing: 0;
-    width: 100%;
-}
-.mat-row {
-    height: auto;
-  }
-  
-  .mat-cell {
-    padding: 28px 28px 28px 0;
-    margin: 5px;
-    
-  }
 
-  .icon_cell{
-    text-align: right;
-  }
+
+//top right bottom left
+
+//IDK how to use the main styles page so I re reated the font family ugh
+@font-face {
+  font-family: HPE-Light;
+  src: url(../../assets/fonts/MetricHPE-Web-Light.woff) format("woff"),
+  url(../../assets/fonts/MetricHPE-Web-Light.eot) format("eot"),
+}
+.recents-title{
+  color: white;
+font-family: 'HPE-Light';
+font-size: 36px;
+}
+

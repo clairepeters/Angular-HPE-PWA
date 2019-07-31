@@ -14,24 +14,21 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { BookmarksComponent } from './bookmarks/bookmarks.component';
 import { TopbarComponent } from './topbar/topbar.component';
-import { DocumentsListComponent } from './documents-list/documents-list.component';
-import { DocumentDetailsComponent } from './document-details/document-details.component';
+import { DocumentsListComponent } from './browse/documents-list/documents-list.component';
+import { DocumentDetailsComponent } from './browse/document-details/document-details.component';
 import { MoreDataComponent } from './more-data/more-data.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatTableModule, MatFormFieldModule, MatInputModule} from '@angular/material';
-import { NbThemeModule, NbLayoutModule, NbTabsetModule,NbRouteTabsetModule, NbCardModule, NbButtonModule, NbActionsModule, NbIconModule, NbTreeGridModule, } from '@nebular/theme';
-import { NbListModule,  } from '@nebular/theme';
-import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
-import {
-  NbAuthComponent,
-  NbLoginComponent,
-  NbRegisterComponent,
-  NbLogoutComponent,
-  NbRequestPasswordComponent,
-  NbResetPasswordComponent,
-  
-} from '@nebular/auth';
+
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MaterialModule } from './material.module';
+import { ModalComponent } from './bookmarks/folder-accordion/folders/new-folder-modal/modal.component';
+import { AFolderComponent } from './bookmarks/folder-accordion/a-folder/a-folder.component';
+import { SearchComponent } from './bookmarks/search/search.component';
+import { RecentsComponent } from './bookmarks/recents/recents.component';
+import { BmkAccordionComponent } from './bookmarks/bmk-accordion/bmk-accordion.component';
+import { FolderAccordionComponent } from './bookmarks/folder-accordion/folder-accordion.component';
+
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -39,59 +36,16 @@ import {
     RouterModule.forRoot([
       { path: 'bookmarks', component: BookmarksComponent },
       { path: 'DOC_DATA/:id', component: DocumentDetailsComponent },
+      {path: 'folder/:ID', component:  AFolderComponent},
       { path: 'documents-list', component: DocumentsListComponent },
       { path: 'more-data', component: MoreDataComponent },
-      {path: '',component: NbAuthComponent,
-      children: [
-        {
-          path: '',
-          component: NbLoginComponent,
-        },
-        {
-          path: 'login',
-          component: NbLoginComponent,
-        },
-        {
-          path: 'register',
-          component: NbRegisterComponent,
-        },
-        {
-          path: 'logout',
-          component: NbLogoutComponent,
-        },
-        {
-          path: 'request-password',
-          component: NbRequestPasswordComponent,
-        },
-        {
-          path: 'reset-password',
-          component: NbResetPasswordComponent,
-        },
-      ],}
+     
     ]),
     HttpClientModule,
-    MatTableModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
+   
+    FlexLayoutModule,
     BrowserAnimationsModule,
-    NbTabsetModule, NbListModule,
-    NbCardModule, NbActionsModule,
-    NbRouteTabsetModule, NbIconModule, NbTreeGridModule, 
-    NbButtonModule,
-    NbThemeModule.forRoot({ name: 'default' }),
-    NbLayoutModule,
-    NbEvaIconsModule,
-
-    NbAuthModule.forRoot({
-      strategies: [
-        NbPasswordAuthStrategy.setup({
-          name: 'email',
-        }),
-      ],
-      forms: {},
-    }), 
-
+    MaterialModule
   ],
   declarations: [
     AppComponent,
@@ -100,8 +54,14 @@ import {
     DocumentsListComponent,
     DocumentDetailsComponent,
     MoreDataComponent,
+    ModalComponent,
+    AFolderComponent,
+    SearchComponent,
+    RecentsComponent,
+    BmkAccordionComponent,
+    FolderAccordionComponent,
   ],
-  
+  entryComponents: [ModalComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

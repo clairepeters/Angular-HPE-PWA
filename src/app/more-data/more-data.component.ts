@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { BookmarksService } from '../bookmarks.service';
+import { BookmarksService } from '../bookmarks/bmk-accordion/bmk-service/bookmarks.service';
 
 @Component({
   selector: 'app-more-data',

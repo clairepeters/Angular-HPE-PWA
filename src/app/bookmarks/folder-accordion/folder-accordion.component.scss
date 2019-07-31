@@ -1,0 +1,36 @@
+.folders{
+    // display: block;
+    width: 95%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.66);
+    color: #01A982;
+    font-family: 'HPE-Light';
+    font-size: 28px;
+    padding: 10px;
+    border-radius: 20px 20px 0px 0px;
+  }
+  .folder{
+    white-space: normal;
+    display: inline-block;
+    height: 114.32px;
+    width: 100px;
+    margin: 6px 2px 6px 0px;
+    background-color: #425563;
+    border-radius: 5px;
+    color: white;
+    padding: 5px;
+    font-family: 'HPE-Light';
+    overflow-y: hidden;
+  }
+  .center{
+    text-align: center !important;
+  }
+  
+ 
+  
+  .no-spacing  {
+    margin: 0px !important;
+    border-radius: 0 !important;
+  }
+  
+  

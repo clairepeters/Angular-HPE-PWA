@@ -1,0 +1,27 @@
+<!-- FOLDERS PANEL -->
+<mat-expansion-panel class="no-spacing" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>Folders</mat-panel-title>
+      <mat-panel-description>
+        <!-- can add text here -->
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <!-- content of the panel -->
+    <!-- this opens up the dialog modal which utilizes the new-folder-modal component within the bookmarks folder -->
+    <button  id="btn" matTooltip="Add Folder" mat-icon-button aria-label="add folder" (click)="openDialog()">
+      <mat-icon matTooltip="Add Folder" aria-label="add folder">add</mat-icon>
+    </button>
+    <mat-divider></mat-divider>
+    <!-- folders populate here -->
+    <div class="center folder-container">
+      <!-- this searches through the folder array created in the bookmarks.ts file using the functions in the new-folder-modal service -->
+      <div class="center folder" *ngFor="let folder of folders">
+          <a [routerLink]="['/folder',  folder.ID ]">
+						creates unique link
+					</a>
+        {{folder["name"]}}
+      </div>
+    </div>
+    <!-- content of the panel -->
+  </mat-expansion-panel>
+  <!-- END FOLDERS PANEL -->

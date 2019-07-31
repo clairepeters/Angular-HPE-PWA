@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pwa';
+
+  links: any[] =[
+    {
+      "path": "bookmarks",
+      "label": "Bookmarks"
+    },
+    {
+      "path": "documents-list",
+      "label": "Browse"
+    }
+  ]
 }
