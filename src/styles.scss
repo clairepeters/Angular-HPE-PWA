@@ -1,16 +1,76 @@
-@import 'themes';
 
-@import '~@nebular/theme/styles/globals';
-@import '~@nebular/auth/styles/all';
-
-@include nb-install() {
-  @include nb-theme-global();
-  @include nb-auth-global();
-};
 /* You can add global styles to this file, and also import other style files */
 /* Global Styles */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+
+@import '~@angular/material/theming';
+
+@include mat-core();
+$custom-theme-primary: mat-palette($mat-grey, 900);
+$custom-theme-accent:mat-palette($mat-pink, A200, A100, A400);
+$custom-theme-warn: mat-palette($mat-red);
+$custom-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+@include angular-material-theme($custom-theme);
+
+@font-face {
+  font-family: HPE-Regular;
+  src: url(assets/fonts/MetricHPE-Web-Regular.woff) format("woff"),
+  url(assets/fonts/MetricHPE-Web-Regular.eot) format("eot"),
+}
+@font-face {
+  font-family: HPE-Light;
+  src: url(/src/assets/fonts/MetricHPE-Web-Light.woff) format("woff"),
+  url(/src/assets/fonts/MetricHPE-Web-Light.eot) format("eot"),
+
+}
+@font-face {
+  font-family: HPE-Medium;
+  src: url(/src/assets/fonts/MetricHPE-Web-Medium.woff) format("woff"),
+  url(/src/assets/fonts/MetricHPE-Web-Medium.eot) format("eot"),
+}
+@font-face {
+  font-family: HPE-Thin;
+  src: url(/src/assets/fonts/MetricHPE-Web-Thin.woff) format("woff"),
+  url(/src/assets/fonts/MetricHPE-Web-Thin.eot) format("eot"),
+}
+  
+  
+html{
+  height: 100%;
+ 
+}
+body{
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #425563;
+  background-image: linear-gradient(180deg, rgba(218, 218, 218, 0) 0%, rgba(0, 128, 98, 0.9) 73.36%, #425563 100%)
+}
+
+.title{
+  color: white;
+  font-family: 'HPE-Regular' !important;
+  font-size: 48px;
+  margin-top: 30px;
+  padding-left: 6px;
+}
+.tabs{
+  margin-left: 6px;
+}
+.mat-tab-link {
+  color: white;
+  font-size: 24px;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  margin-left: 0px !important;
+
+  margin-right: 24px !important;
+}
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: #01A982 !important;
+}
 a{
   color: black;
   text-decoration: none;
@@ -25,11 +85,6 @@ nb-list-item:hover {
 nav{
   background: transparent !important;
   box-shadow: none !important;
-}
-.tabs{
-  margin: 15px;
-  padding: 10px;
-  font-size: 28;
 }
 .header{
   color: transparent !important;
